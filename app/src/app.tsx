@@ -19,6 +19,9 @@ export const App = () => {
           <header>
             <nav>
               <ul>
+                <li className="logo">
+                  Kitchen sink
+                </li>
                 <li>
                   <NavLink to="/">Home</NavLink>
                 </li>
