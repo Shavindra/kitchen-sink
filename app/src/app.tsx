@@ -7,7 +7,7 @@ import {
   NavLink
 } from "react-router-dom";
 
-import { PageCounter, PageHome } from './pages';
+import { PageCounter, PageHome, PageDataTable } from './pages';
 
 import './app.scss';
 
@@ -26,6 +26,9 @@ export const App = () => {
                   <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
+                  <NavLink to="/data-table">Data table</NavLink>
+                </li>
+                <li>
                   <NavLink to="/counter">Counter</NavLink>
                 </li>
               </ul>
@@ -36,6 +39,9 @@ export const App = () => {
           <Switch>
             <Route path="/counter">
               <PageCounter />
+            </Route>
+            <Route path="/data-table">
+              <PageDataTable />
             </Route>
             <Route path="/">
               <PageHome />
