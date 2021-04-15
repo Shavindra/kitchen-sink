@@ -9,11 +9,6 @@ export const useStyles = makeStyles((theme: Theme) =>
     },
     tableHeadRow: {
       outline: 0,
-      verticalAlign: 'middle',
-      backgroundColor: theme.palette.background.paper,
-      color: theme.palette.text.primary,
-      fontWeight: 500,
-      lineHeight: '1.5rem',
       position: 'relative',
       borderBottom: '1px solid rgba(224, 224, 224, 1)',
       '&:hover $resizeHandle': {
@@ -24,7 +19,6 @@ export const useStyles = makeStyles((theme: Theme) =>
       padding: '16px 1px 16px 16px',
       textAlign: 'left',
       verticalAlign: 'inherit',
-      color: theme.palette.text.primary,
       fontWeight: 500,
       lineHeight: '1.5rem',
       borderRight: '1px solid rgba(224, 224, 224, 1)',
@@ -55,7 +49,6 @@ export const useStyles = makeStyles((theme: Theme) =>
       },
     },
     tableRow: {
-      color: 'inherit',
       outline: 0,
       verticalAlign: 'middle',
       '&:hover': {
@@ -78,7 +71,6 @@ export const useStyles = makeStyles((theme: Theme) =>
       fontWeight: 300,
       lineHeight: 1.43,
       verticalAlign: 'inherit',
-      color: theme.palette.text.primary,
       borderRight: '1px solid rgba(224, 224, 224, 1)',
       '&:last-child': {
         borderRight: 'none',

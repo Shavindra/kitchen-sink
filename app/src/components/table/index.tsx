@@ -1,8 +1,7 @@
-import { Button, CssBaseline, InputLabel, MenuItem, TextField } from '@material-ui/core'
+import { Button, InputLabel, MenuItem, TextField } from '@material-ui/core'
 import React, { useCallback } from 'react'
-import { CellProps, FilterProps, FilterValue, IdType, Row, TableInstance } from 'react-table'
+import { CellProps,  FilterValue, IdType, Row } from 'react-table'
 
-import { Page } from './Page'
 import { Table } from './Table'
 import { PersonData, makeData } from './utils'
 
@@ -259,7 +258,6 @@ export const DataTable: React.FC = () => {
   )
 
   return (
-    <Page>
       <Table
         name={'testTable'}
         columns={columns}
@@ -268,7 +266,6 @@ export const DataTable: React.FC = () => {
         onEdit={dummy}
         onDelete={dummy}
       />
-    </Page>
   )
 }
 

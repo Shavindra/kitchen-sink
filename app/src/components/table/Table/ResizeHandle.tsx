@@ -1,6 +1,5 @@
 import cx from 'classnames'
 import React, { ReactElement } from 'react'
-import { ColumnInstance } from 'react-table'
 
 import { useStyles } from './TableStyles'
 

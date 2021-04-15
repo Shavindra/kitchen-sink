@@ -1,11 +1,10 @@
 import { Chip, createStyles, makeStyles } from '@material-ui/core'
 import React, { ReactElement, useCallback } from 'react'
-import { ColumnInstance, FilterValue, IdType, TableInstance } from 'react-table'
+import { FilterValue, IdType, TableInstance } from 'react-table'
 
 const useStyles = makeStyles(
   createStyles({
     filtersActiveLabel: {
-      color: '#998',
       fontSize: '14px',
       paddingRight: 10,
     },
@@ -19,7 +18,6 @@ const useStyles = makeStyles(
     },
     filterChip: {
       marginRight: 4,
-      color: '#222',
     },
   })
 )
