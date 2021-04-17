@@ -4,24 +4,17 @@ import classnames from 'classnames'
 import React, { Suspense, useState } from 'react'
 
 import { Loader } from '../Loader'
+import { tableDebugStyles } from './TableStyles'
 
 const ReactJson = React.lazy(() => import('react-json-view'))
 
-const useStyles = makeStyles(
-  createStyles({
-    button: {
-      marginTop: -72,
-      marginLeft: 0,
-    },
-  })
-)
 
 export const TableDebug: React.FC<{
   enabled: boolean
   instance: any
 }> = ({ enabled, instance }) => {
   const [open, setOpen] = useState(false)
-  const classes = useStyles()
+  const classes = tableDebugStyles()
 
   return enabled ? (
     <>

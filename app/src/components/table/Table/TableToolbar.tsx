@@ -11,31 +11,8 @@ import { TableInstance } from 'react-table'
 import { TableMouseEventHandler } from '../../../types/react-table-config'
 import { ColumnHidePage } from './ColumnHidePage'
 import { FilterPage } from './FilterPage'
+import { tableToolBarStyles } from './TableStyles'
 
-export const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    toolbar: {
-      display: 'flex',
-      justifyContent: 'space-between',
-    },
-    leftButtons: {},
-    rightButtons: {},
-    leftIcons: {
-      '&:first-of-type': {
-        marginLeft: -12,
-      },
-    },
-    rightIcons: {
-      padding: 12,
-      marginTop: '-6px',
-      width: 48,
-      height: 48,
-      '&:last-of-type': {
-        marginRight: -12,
-      },
-    },
-  })
-)
 
 type InstanceActionButton<T extends Record<string, unknown>> = {
   instance: TableInstance<T>
@@ -82,7 +59,7 @@ export const InstanceSmallIconActionButton = <T extends Record<string, unknown>>
   enabled = () => true,
   variant,
 }: InstanceActionButton<T>): ReactElement => {
-  const classes = useStyles({})
+  const classes = tableToolBarStyles({})
   return (
     <Tooltip title={label} aria-label={label}>
       <span>
@@ -108,7 +85,7 @@ export const SmallIconActionButton = ({
   enabled = true,
   variant,
 }: ActionButton): ReactElement => {
-  const classes = useStyles({})
+  const classes = tableToolBarStyles({})
   return (
     <Tooltip title={label} aria-label={label}>
       <span>
@@ -141,7 +118,7 @@ export function TableToolbar<T extends Record<string, unknown>>({
   onEdit,
 }: PropsWithChildren<TableToolbarProps<T>>): ReactElement | null {
   const { columns } = instance
-  const classes = useStyles()
+  const classes = tableToolBarStyles()
   const [anchorEl, setAnchorEl] = useState<Element | undefined>(undefined)
   const [columnsOpen, setColumnsOpen] = useState(false)
   const [filterOpen, setFilterOpen] = useState(false)

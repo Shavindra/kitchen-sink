@@ -1,41 +1,7 @@
 import { Button, Popover, Typography, createStyles, makeStyles } from '@material-ui/core'
 import React, { FormEvent, ReactElement, useCallback } from 'react'
 import { TableInstance } from 'react-table'
-
-const useStyles = makeStyles(
-  createStyles({
-    columnsPopOver: {
-      padding: 24,
-    },
-    filtersResetButton: {
-      position: 'absolute',
-      top: 18,
-      right: 21,
-    },
-    popoverTitle: {
-      fontWeight: 500,
-      padding: '0 24px 24px 0',
-      textTransform: 'uppercase',
-    },
-    grid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(2, 218px)',
-      '@media (max-width: 600px)': {
-        gridTemplateColumns: 'repeat(1, 180px)',
-      },
-      gridColumnGap: 24,
-      gridRowGap: 24,
-    },
-    cell: {
-      width: '100%',
-      display: 'inline-flex',
-      flexDirection: 'column',
-    },
-    hidden: {
-      display: 'none',
-    },
-  })
-)
+import { filterPageStyles } from './TableStyles'
 
 type FilterPageProps<T extends Record<string, unknown>> = {
   instance: TableInstance<T>
@@ -50,7 +16,7 @@ export function FilterPage<T extends Record<string, unknown>>({
   onClose,
   show,
 }: any): ReactElement {
-  const classes = useStyles({})
+  const classes = filterPageStyles({})
   const { allColumns, setAllFilters } = instance
 
   const onSubmit = useCallback(

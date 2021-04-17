@@ -1,4 +1,4 @@
-import { TableSortLabel, TextField } from '@material-ui/core'
+import { TableSortLabel, TextField, ThemeProvider } from '@material-ui/core'
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
 import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp'
 import cx from 'classnames'
@@ -33,8 +33,9 @@ import { fuzzyTextFilter, numericTextFilter } from './filters'
 import { ResizeHandle } from './ResizeHandle'
 import { TableDebug } from './TableDebug'
 import { TablePagination } from './TablePagination'
-import { HeaderCheckbox, RowCheckbox, useStyles } from './TableStyles'
+import { HeaderCheckbox, RowCheckbox, tableStyles } from './TableStyles'
 import { TableToolbar } from './TableToolbar'
+import {theme} from './theme'
 import { TooltipCell } from './TooltipCell'
 
 export interface TableProperties<T extends Record<string, unknown>> extends TableOptions<any> {
@@ -156,7 +157,7 @@ const filterTypes = {
 
 export function Table(props: any): ReactElement {
   const { name, columns, onAdd, onDelete, onEdit, onClick } = props
-  const classes = useStyles()
+  const classes = tableStyles()
 
   const [initialState, setInitialState] = useLocalStorage(`tableState:${name}`, {})
   const instance: any = useTable(
@@ -190,7 +191,7 @@ export function Table(props: any): ReactElement {
   }
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <TableToolbar instance={instance} {...{ onAdd, onDelete, onEdit }} />
       <FilterChipBar<any> instance={instance} />
       <div className={classes.tableTable} {...getTableProps()}>
@@ -275,6 +276,6 @@ export function Table(props: any): ReactElement {
       </div>
       <TablePagination<any> instance={instance} />
       <TableDebug enabled instance={instance} />
-    </>
+    </ThemeProvider>
   )
 }

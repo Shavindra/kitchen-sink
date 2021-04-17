@@ -1,26 +1,9 @@
 import { Chip, createStyles, makeStyles } from '@material-ui/core'
 import React, { ReactElement, useCallback } from 'react'
 import { FilterValue, IdType, TableInstance } from 'react-table'
+import { filterChipBarStyles } from './TableStyles'
 
-const useStyles = makeStyles(
-  createStyles({
-    filtersActiveLabel: {
-      fontSize: '14px',
-      paddingRight: 10,
-    },
-    chipZone: {
-      padding: '18px 0 5px 10px',
-      width: '100%',
-    },
-    chipLabel: {
-      fontWeight: 500,
-      marginRight: 5,
-    },
-    filterChip: {
-      marginRight: 4,
-    },
-  })
-)
+
 
 type FilterChipBarProps<T extends Record<string, unknown>> = {
   instance: TableInstance<T>
@@ -39,7 +22,7 @@ const getFilterValue = (column: any, filterValue: FilterValue) => {
 export function FilterChipBar<T extends Record<string, unknown>>({
   instance,
 }: any): ReactElement | null {
-  const classes = useStyles({})
+  const classes = filterChipBarStyles({})
   const {
     allColumns,
     setFilter,
