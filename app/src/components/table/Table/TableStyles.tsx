@@ -20,11 +20,12 @@ export const tableStyles = makeStyles((theme: Theme) =>
       textAlign: 'left',
       verticalAlign: 'inherit',
       fontWeight: 500,
-      lineHeight: '1.5rem',
+      lineHeight: '1',
       borderRight: '1px solid rgba(224, 224, 224, 1)',
       '&:last-child': {
         borderRight: 'none',
       },
+      alignItems: 'center'
     },
     resizeHandle: {
       position: 'absolute',
@@ -75,6 +76,7 @@ export const tableStyles = makeStyles((theme: Theme) =>
       '&:last-child': {
         borderRight: 'none',
       },
+      alignItems: 'center'
     },
     tableSortLabel: {
       '& svg': {
@@ -88,7 +90,6 @@ export const tableStyles = makeStyles((theme: Theme) =>
       '& svg': {
         width: 16,
         height: 16,
-        marginTop: 4,
         marginRight: 0,
       },
     },
@@ -286,3 +287,14 @@ export const tooltipCellStyles = makeStyles({
     whiteSpace: 'nowrap',
   },
 })
+
+
+export const cellStyles = (props: any, disableResizing = false, align = 'left') => [
+  props,
+  {
+    style: {
+      justifyContent: align === 'right' ? 'flex-end' : 'flex-start',
+      display: 'flex',
+    },
+  },
+]

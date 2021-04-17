@@ -31,7 +31,7 @@ import { fuzzyTextFilter, numericTextFilter } from './filters'
 import { ResizeHandle } from './ResizeHandle'
 import { TableDebug } from './TableDebug'
 import { TablePagination } from './TablePagination'
-import { HeaderCheckbox, RowCheckbox, tableStyles } from './TableStyles'
+import { cellStyles, HeaderCheckbox, RowCheckbox, tableStyles } from './TableStyles'
 import { TableToolbar } from './TableToolbar'
 import {theme} from './theme'
 import { TooltipCell } from './TooltipCell'
@@ -80,17 +80,6 @@ function DefaultColumnFilter<T extends Record<string, unknown>>({ columns, colum
   )
 }
 
-const getStyles = (props: any, disableResizing = false, align = 'left') => [
-  props,
-  {
-    style: {
-      justifyContent: align === 'right' ? 'flex-end' : 'flex-start',
-      alignItems: 'flex-start',
-      display: 'flex',
-    },
-  },
-]
-
 const selectionHook = (hooks: Hooks<any>) => {
   hooks.allColumns.push((columns) => [
     // Let's make a column for selection
@@ -120,10 +109,10 @@ const selectionHook = (hooks: Hooks<any>) => {
 }
 
 const headerProps = <T extends Record<string, unknown>>(props: any, { column }: Meta<T, { column: HeaderGroup<T> }, any>) =>
-  getStyles(props, column && column.disableResizing, column && column.align)
+  cellStyles(props, column && column.disableResizing, column && column.align)
 
 const cellProps = <T extends Record<string, unknown>>(props: any, { cell }: Meta<T, { cell: Cell<T> }, any>) =>
-  getStyles(props, cell.column && cell.column.disableResizing, cell.column && cell.column.align)
+  cellStyles(props, cell.column && cell.column.disableResizing, cell.column && cell.column.align)
 
 const defaultColumn = {
   Filter: DefaultColumnFilter,
