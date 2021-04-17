@@ -1,4 +1,4 @@
-import { IconButton, Tooltip, createStyles, makeStyles } from '@material-ui/core'
+import { IconButton, Tooltip } from '@material-ui/core'
 import BugReportTwoToneIcon from '@material-ui/icons/BugReportTwoTone'
 import classnames from 'classnames'
 import React, { Suspense, useState } from 'react'
@@ -7,7 +7,6 @@ import { Loader } from '../Loader'
 import { tableDebugStyles } from './TableStyles'
 
 const ReactJson = React.lazy(() => import('react-json-view'))
-
 
 export const TableDebug: React.FC<{
   enabled: boolean

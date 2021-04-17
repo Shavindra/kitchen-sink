@@ -1,9 +1,7 @@
-import { Chip, createStyles, makeStyles } from '@material-ui/core'
-import React, { ReactElement, useCallback } from 'react'
+import { Chip } from '@material-ui/core'
+import { ReactElement, useCallback } from 'react'
 import { FilterValue, IdType, TableInstance } from 'react-table'
 import { filterChipBarStyles } from './TableStyles'
-
-
 
 type FilterChipBarProps<T extends Record<string, unknown>> = {
   instance: TableInstance<T>

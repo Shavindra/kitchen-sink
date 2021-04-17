@@ -1,4 +1,3 @@
-import { makeStyles } from '@material-ui/core'
 import React, { CSSProperties } from 'react'
 import { CellProps } from 'react-table'
 import { tooltipCellStyles } from './TableStyles'

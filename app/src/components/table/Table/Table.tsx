@@ -2,12 +2,10 @@ import { TableSortLabel, TextField, ThemeProvider } from '@material-ui/core'
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
 import KeyboardArrowUp from '@material-ui/icons/KeyboardArrowUp'
 import cx from 'classnames'
-import React, { CSSProperties, MouseEventHandler, PropsWithChildren, ReactElement, useEffect } from 'react'
+import React, { CSSProperties, MouseEventHandler, ReactElement, useEffect } from 'react'
 import {
   Cell,
-  CellProps,
   ColumnInstance,
-  FilterProps,
   HeaderGroup,
   HeaderProps,
   Hooks,
