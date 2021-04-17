@@ -32,9 +32,14 @@ declare module '@material-ui/core/styles/createMuiTheme' {
 
 const activeColor = '#009688'
 const paperColor = '#111111';
+const textOnLightColor = '#111111';
 
 export const theme = createMuiTheme({
   palette: {
+    type: "dark",
+    background: {
+      paper: '#FFFFFF'
+    },
     grey: {
       50: '#FF0000',
       100: '#FF0000',
@@ -86,12 +91,29 @@ export const theme = createMuiTheme({
     },
     MuiPopover: {
       paper: {
-        color: paperColor,
+        '& .MuiFormLabel-root, & .MuiInput-input': {
+          color: textOnLightColor
+        },
+        '& .Mui-focused': {
+          color: activeColor
+        },
+        '& .MuiButton-root': {
+          color: activeColor
+        },
+        '& .MuiInput-underline:before': {
+          borderColor: textOnLightColor
+        },
+        '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+          borderColor: textOnLightColor
+        },
+        '& .MuiInput-underline:after': {
+          borderColor: activeColor
+        },
+        color: textOnLightColor,
       }
     },
     MuiInputBase: {
       root: {
-        color: 'inherit',
         lineHeight: 1
       }
     },
